@@ -14,7 +14,8 @@
    {
       <text>
     var cont = `@(new HtmlString(item.Description))`;   
-        $("#MainContent").html(cont);
+    //$("#MainContent").html(cont);
+    $(cont).appendTo("#MainContent");
     </text>
    }
 </script>

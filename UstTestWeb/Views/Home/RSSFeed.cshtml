@@ -14,12 +14,12 @@
         {
             foreach (var item in Model.Channel.Item)
             {
-                <text>
-                    var cont = @item.Description;
-                    var htmltext = $.parseHTML(cont)
-                    (htmltext).appendTo("#MainContent");
-                </text>
-                
+               <script>
+                   var cont = @item.Description;
+                   var htmltext = $.parseHTML(cont);
+                   (htmltext).appendTo("#MainContent");
+               </script>
+
             }
         }
     }

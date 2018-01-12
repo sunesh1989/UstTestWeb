@@ -11,8 +11,8 @@
     @foreach (var item in Model.Channel.Item)
    {
       <text>
-        var cont = '@(new HtmlString(item.Description))';
-        $("#MainContent").html(cont);
+        
+    $("#MainContent").html('@Html.Raw(item.Description)');
     </text>
    }
 </script>

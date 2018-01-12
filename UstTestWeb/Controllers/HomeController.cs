@@ -20,7 +20,7 @@ namespace UstTestWeb.Controllers
         }
         public async Task<ActionResult> RSSFeed()
         {
-
+            var objRss = new Rss();
 
             using (var client = new HttpClient())
             {
@@ -37,8 +37,8 @@ namespace UstTestWeb.Controllers
                         using (var stream = new MemoryStream(buffer))
                         {
                             var serializer = new XmlSerializer(typeof(Rss));
-                            var deliciousSuggest = (Rss)serializer.Deserialize(stream);
-                            ViewData["test"] = deliciousSuggest.Channel.Description;
+                            objRss = (Rss)serializer.Deserialize(stream);
+                            ViewData["test"] = objRss.Channel.Description;
                         }
                       
                     }
@@ -55,7 +55,7 @@ namespace UstTestWeb.Controllers
             }
            
 
-            return View();
+            return View(objRss);
         }        
     }
 

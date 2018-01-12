@@ -1,8 +1,21 @@
-﻿@{
+﻿@model UstTestWeb.Controllers.Rss
+@{
     ViewBag.Title = "RSS Feed";
 }
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 <h3>@ViewData["test"]</h3>
 
+@{
+    if (Model != null)
+    {
+        if (Model.Channel != null)
+        {
+            foreach (var item in Model.Channel.Item)
+            {
+                <h3>@item.Description</h3>
+            }
+        }
+    }
+}
 <p>Use this area to provide additional information.</p>

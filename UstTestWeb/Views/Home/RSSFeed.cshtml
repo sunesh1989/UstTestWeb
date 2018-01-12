@@ -7,16 +7,18 @@
 
 <div id="MainContent"></div>
 
+@section scripts
+{
 <script type="text/javascript">
     @foreach (var item in Model.Channel.Item)
    {
       <text>
-        
-    $("#MainContent").html('@Html.Raw(item.Description)');
+        var cont = '@(new HtmlString(item.Description))';
+        $("#MainContent").html(cont);
     </text>
    }
 </script>
+}
 
 
 
-<p>Use this area to provide additional information.</p>

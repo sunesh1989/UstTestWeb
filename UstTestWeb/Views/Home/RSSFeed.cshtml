@@ -13,7 +13,8 @@
     @foreach (var item in Model.Channel.Item)
    {
       <text>
-        var cont = '@(new HtmlString(item.Description))';
+    var cont = '@(new HtmlString(item.Description))';
+    var cont = cont.replace(/\n|\r/g, "");
         $("#MainContent").html(cont);
     </text>
    }

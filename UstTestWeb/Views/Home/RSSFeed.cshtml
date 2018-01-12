@@ -14,7 +14,7 @@
         {
             foreach (var item in Model.Channel.Item)
             {
-                <text> $("#MainContent").appendTo(@item.Description);</text>
+                <text> $(@item.Description).appendTo("#MainContent");</text>
                 
             }
         }

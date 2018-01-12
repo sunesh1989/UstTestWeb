@@ -26,6 +26,14 @@ namespace UstTestWeb.Controllers
                 try
                 {
                      response = client.GetAsync("https://platform.boomi.com/account/trainingvishnurajnr-48CRQA/feed/category/alert/rss-2.0").Result;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        ViewData["test"] = response.RequestMessage;
+                    }
+                    else
+                    {
+                        
+                    }
                 }
                 catch(Exception e)
                 {
@@ -33,7 +41,7 @@ namespace UstTestWeb.Controllers
                     // TODO: Log
                 }
             }
-            ViewData["test"] = response;
+           
 
             return View();
         }        

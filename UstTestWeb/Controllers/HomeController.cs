@@ -37,8 +37,7 @@ namespace UstTestWeb.Controllers
                         using (var stream = new MemoryStream(buffer))
                         {
                             var serializer = new XmlSerializer(typeof(Rss));
-                            objRss = (Rss)serializer.Deserialize(stream);
-                            ViewData["test"] = objRss.Channel.Description;
+                            objRss = (Rss)serializer.Deserialize(stream);                           
                         }
                       
                     }

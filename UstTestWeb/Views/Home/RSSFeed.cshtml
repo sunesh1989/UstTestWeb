@@ -14,7 +14,7 @@
    {
       <text>
     var cont = '@(new HtmlString(item.Description))';
-    var cont = cont.replace(/\n|\r/g, "");
+    var cont = cont.replace(/[^\x20-\x7E]/gmi, "")
         $("#MainContent").html(cont);
     </text>
    }

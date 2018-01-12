@@ -33,7 +33,7 @@ namespace UstTestWeb.Controllers
                     // TODO: Log
                 }
             }
-            ViewData["test"] = "ss";
+            ViewData["test"] = response;
 
             return View();
         }        

@@ -7,21 +7,17 @@
 
 <div id="MainContent"></div>
 
-@{
-    if (Model != null)
-    {
-        if (Model.Channel != null)
-        {
-            foreach (var item in Model.Channel.Item)
-            {
-               <script>
-                   var cont = @item.Description;
-                   var htmltext = $.parseHTML(cont);
-                   (htmltext).appendTo("#MainContent");
-               </script>
 
-            }
-        }
-    }
-}
+
+
+<script type="text/javascript">
+   @foreach (var item in Model.Channel.Item)
+   {
+       var cont = '@item.Description';      
+       ($(cont)).appendTo("#MainContent");
+   }
+</script>
+
+
+
 <p>Use this area to provide additional information.</p>

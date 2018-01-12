@@ -7,14 +7,13 @@
 
 <div id="MainContent"></div>
 
-
-
-
 <script type="text/javascript">
-   @foreach (var item in Model.Channel.Item)
+    @foreach (var item in Model.Channel.Item)
    {
-       var cont = '@item.Description';      
-       $(cont).appendTo("#MainContent");
+      <text>
+        var cont = '@(new HtmlString(item.Description))';
+        $("#MainContent").html(cont);
+    </text>
    }
 </script>
 

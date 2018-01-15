@@ -13,18 +13,6 @@
 </div>
 
 <div id="MainContent"></div>
-@section scripts
-{
-<script type="text/javascript">
-    @foreach (var item in Model.Channel.Item)
-       {
-        <text>
-            var cont = `@(new HtmlString(item.Description))`;   
-            $(cont).appendTo("#MainContent");
-        </text>
-       }
-</script>
-}
 
 <div class="row">
     <div class="col-md-12">
@@ -36,8 +24,9 @@
                         <tr>
                             <th>Title</th>
                             <th>Link</th>
-                            <th>Push Date</th>
                             <th>Description</th>
+                            <th>Category</th>
+                            <th>Push Date</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -47,8 +36,9 @@
                             <tr>
                                 <td>@item.Title</td>
                                 <td>@item.Link</td>
+                                <td>@(new HtmlString(item.Description))</td>
+                                <td>@item.Category[0]</td>
                                 <td>@item.PubDate</td>
-                                <td>`@(new HtmlString(item.Description))`</td>
                             </tr>
                         }
                     </tbody>

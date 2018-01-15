@@ -27,15 +27,22 @@
         </div>
     </div>
     <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+        <div class="cstmContent">
+            @RenderBody()
+        </div>
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - ICE Dashboard</p>
+            </footer>
+        </div>
+
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script>
+        $(".cstmContent").css("min-height", window.innerHeight - 170);
+    </script>
 </body>
 </html>

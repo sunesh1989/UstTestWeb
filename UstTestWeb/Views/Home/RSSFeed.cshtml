@@ -2,24 +2,64 @@
 @{
     ViewBag.Title = "RSS Feed";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<br />
+<div class="row">
+    <div class="col-md-6">
+        <label><h3>RSS Feed</h3></label>
+    </div>
+    <div class="col-md-6 text-right">
+        <button class="btn btn-primary" onclick="location.reload();">Refresh RSSFeed</button>
+    </div>
+</div>
 
 <div id="MainContent"></div>
-
 @section scripts
 {
 <script type="text/javascript">
     @foreach (var item in Model.Channel.Item)
-   {
-      <text>
-    var cont = `@(new HtmlString(item.Description))`;   
-    //$("#MainContent").html(cont);
-    $(cont).appendTo("#MainContent");
-    </text>
-   }
+       {
+        <text>
+            var cont = `@(new HtmlString(item.Description))`;   
+            $(cont).appendTo("#MainContent");
+        </text>
+       }
 </script>
 }
 
+<div class="row">
+    <div class="col-md-12">
+        @{
+            if (Model.Channel.Item.Count() > 0)
+            {
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Link</th>
+                            <th>Push Date</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Channel.Item)
+                        {
 
+                            <tr>
+                                <td>@item.Title</td>
+                                <td>@item.Link</td>
+                                <td>@item.PubDate</td>
+                                <td>`@(new HtmlString(item.Description))`</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <div class="well well-lg">Queue is empty</div>
+            }
+        }
+
+    </div>
+</div>
 

@@ -23,7 +23,6 @@
                     <thead>
                         <tr>
                             <th>Title</th>
-                            <th>Link</th>
                             <th>Description</th>
                             <th>Category</th>
                             <th>Push Date</th>
@@ -34,8 +33,7 @@
                         {
 
                             <tr>
-                                <td>@item.Title</td>
-                                <td>@item.Link</td>
+                                <td><a href="@item.Link" target="_blank">@item.Title</a></td>
                                 <td>@(new HtmlString(item.Description))</td>
                                 <td>@item.Category[0]</td>
                                 <td>@item.PubDate</td>

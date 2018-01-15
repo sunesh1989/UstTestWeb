@@ -21,7 +21,6 @@ namespace UstTestWeb.Controllers
         public async Task<ActionResult> Queue()
         {
             var result = new List<Account>();
-
             try
             {
                 TokenProvider tokenProvider = TokenProvider.CreateSharedAccessSignatureTokenProvider(DashboardConfig.keyName, DashboardConfig.accessKey);

@@ -59,7 +59,7 @@ namespace UstTestWeb.Controllers
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/xml"));
                 try
                 {
-                     var response  = await client.GetAsync("https://platform.boomi.com/account/trainingvishnurajnr-48CRQA/feed/category/alert/rss-2.0");
+                     var response  = await client.GetAsync("https://platform.boomi.com/account/trainingvishnurajnr-48CRQA/container/50c3bbff-261c-404a-9635-eb32fac2f12f/feed/rss-2.0");
 
                     if (response.IsSuccessStatusCode)
                     {
